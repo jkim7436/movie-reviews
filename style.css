@@ -64,3 +64,23 @@ Template: simone
     color: hsl(0, 0%, 70%);
 }
 
+.review-index {
+    margin: 2rem;
+}
+
+.review-item {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+@media screen and (min-width: 473px) {
+    .review-item {
+        min-width: 200px;
+        width: 20%;
+        padding: 5px;
+    }
+}
+
+.review-item img {
+    display: block;
+}
