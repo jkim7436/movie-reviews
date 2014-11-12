@@ -53,3 +53,35 @@ function custom_taxonomies_terms_links($post_ID){
 
   return implode(' ', $out );
 }
+
+
+// Get the rating number and convert it to ticket icons
+function get_rating($post_ID){
+    // Get ratings term(s)
+    $terms = get_the_terms( $post_ID, 'rating' );
+    
+    // Check to make sure we actually have rating terms
+    if( $terms && ! is_wp_error( $terms ) ){
+        // Get just the first term object
+        $term = reset($terms);
+        // Set the term name (rating number) as the variable $rating
+        $rating = $term->name;
+
+        // Output tickets to match the number
+        echo '<div class="ratings movie-tax">';
+        echo '<h4 class="movie-data-title">Rating</h4>';
+        echo '<a href="' . get_term_link( $term->slug, 'rating' ) . '" title="' . get_the_title($post_ID) . ' gets ' . $rating . ' of 5 tickets.">';
+        
+        // Output one black ticket for each number (3 equals 3 tickets)
+        for ($ticket = 0 ; $ticket < $rating; $ticket++){ 
+            echo '<i class="fa fa-ticket"></i>'; 
+        }
+        // Output grey tickets for the remainder (5 - 3 = 2 tickets)
+        for ($no_ticket = $rating ; $no_ticket < 5 ; $no_ticket++){
+            echo '<i class="fa fa-ticket grey"></i>'; 
+        }
+        
+        echo '</a>';
+        echo '</div>';
+    } // Endif
+}

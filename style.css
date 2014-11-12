@@ -60,6 +60,7 @@ Template: simone
     width: 70px;
     display: inline-block;
 }
+
 .grey {
     color: hsl(0, 0%, 70%);
 }
