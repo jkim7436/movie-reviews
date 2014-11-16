@@ -44,7 +44,7 @@
 	</header><!-- .entry-header -->
         
             <div class="entry-content">
-                <?php get_template_part('review', 'info'); ?>
+                <?php get_template_part('review', 'info'); ?> <!--generate a box on the post page-->
             </div><!-- .entry-content -->
             <footer class="entry-footer continue-reading">
 		<?php echo '<a href="' . get_permalink() . '" title="' . __('Read Full Review ', 'simone') . get_the_title() . '" rel="bookmark">' . __('Read Full Review', 'simone') . '<i class="fa fa-arrow-circle-o-right"></i><span class="screen-reader-text"> ' . get_the_title() . '<span></a>'; ?>

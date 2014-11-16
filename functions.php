@@ -48,9 +48,8 @@ function custom_taxonomies_terms_links($post_ID){
                 $out[] = $term->slug;
             }
         }
-        
     }
-
+    
   return implode(' ', $out );
 }
 

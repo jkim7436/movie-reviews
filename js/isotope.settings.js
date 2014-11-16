@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
           layoutMode: 'fitRows'
         });
     });
+
     
     // Clear all checkboxes
     $('.filter-clear a').click(function () {
@@ -36,5 +37,6 @@ jQuery(document).ready(function($){
         $('.tax-stack li:has(input:checkbox:checked)').addClass('active');
     $('.tax-stack li:has(input:checkbox:not(:checked))').removeClass('active');
     });
+
 
 });
